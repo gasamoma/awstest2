@@ -22,7 +22,6 @@ verifier:
        - bucket
       attrs_outputs:
        test_bucket_name: bucket_name
-	
-      
+
 suites:
   - name: default
