@@ -1,7 +1,6 @@
 # awstest2
-<br>
+Test 2 - AWS, Terraform and Kitchen
 ## Test 2 - AWS, Terraform and Kitchen
-<br>
 **NOTE**: I haven't tried Kitchen before, but as far as i read to it this is the way to integrate it
 feel free to add PR to the WIP with any corrections
 ---
