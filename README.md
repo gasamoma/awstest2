@@ -13,3 +13,13 @@ variable "region"
 variable "versioning"
 destroy at the end with 
 `terraform destroy`
+---
+## To Test
+Install the gems
+`bundle install`
+Then create the resources
+`bundle exec kitchen converge`
+Then run the tests against resources
+`bundle exec kitchen verify`
+Then destroy the resources
+`bundle exec kitchen destroy`
