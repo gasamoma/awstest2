@@ -4,7 +4,7 @@ resource "aws_eks_cluster" "test-eks-cluster" {
 
   vpc_config {
     security_group_ids = [aws_security_group.test-cluster.id]
-    subnet_ids         = [aws_subnet.public.*.id]
+    subnet_ids         = local.public_route_table_id
   }
 
   depends_on = [

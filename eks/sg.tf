@@ -1,5 +1,5 @@
 resource "aws_security_group" "test-cluster" {
-  name        = "terraform-eks-demo-cluster"
+  name        = "${var.role}-${var.project}-${var.environment}-sg"
   description = "Cluster communication with worker nodes"
   vpc_id      = aws_vpc.mod.id
 
