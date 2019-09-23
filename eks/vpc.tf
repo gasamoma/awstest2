@@ -58,40 +58,9 @@ resource "aws_route" "internet_gateway" {
 locals {
   aws_flow_log_name         = "${var.project}/${var.environment}/vpcflow"
   public_route_table_id     = aws_route_table.public.*.id
-}
-
-
-output "public_subnets" {
-  value = aws_subnet.public.*.id
-}
-
-output "public_subnets_cidr" {
-  value = aws_subnet.public.*.cidr_block
-}
-
-output "vpc_id" {
-  value = aws_vpc.mod.id
-}
-
-output "default_security_group_id" {
-  value = aws_vpc.mod.default_security_group_id
-}
-
-output "vpc_cidr" {
-  value = aws_vpc.mod.cidr_block
-}
-
-output "public_route_table_id" {
-  value = local.public_route_table_id
-}
-output "route_table_ids" {
-  value = local.route_table_ids
-}
-locals {
+  public_subnets_id         = aws_subnet.public.*.id
   route_table_ids       = concat(local.public_route_table_id)
   route_table_ids_count = length(local.route_table_ids)
 }
 
-output "route_table_ids_count" {
-  value = local.route_table_ids_count
-}
+
