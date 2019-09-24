@@ -1,17 +1,8 @@
 driver:
   name: terraform
-  variable_files:
-    - testing.tfvars
 
 provisioner:
   name: terraform
-
-platforms:
-  - name: ubuntu
-
-transport:
-  name: ssh
-  ssh_key: ~/path/to/your/private/aws/key.pem
 
 verifier:
   name: terraform
@@ -20,8 +11,9 @@ verifier:
       backend: local
       controls:
        - bucket
-      attrs_outputs:
-       test_bucket_name: bucket_name
+
+platforms:
+  - name: terraform
 
 suites:
   - name: default
